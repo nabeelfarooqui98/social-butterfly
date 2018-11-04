@@ -65,61 +65,61 @@ function check() {
   var err="";
   var alpha = /^[a-zA-Z\s-, ]+$/; 
   var chmail = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
-    /*
-    if( document.regform.firstname.value == "" || !document.regform.firstname.value.match(alpha))
+  var fname=$("#firstname").val();
+  var email = $("#email").val();
+  var pass = $("#password").val();
+  var country=$("#country").val();
+  
+    if( fname == "" || !fname.match(alpha))
     {
         err=err+ "Please Provide Valid First Name!\n" ;
+    } 
+    if( pass == "")
+    {  
+        err=err + "Please Provide Valid Password!\n" ; 
     }
     
-    if( document.regform.email.value == "" || (chmail.test(document.regform.email.value)==false))
-    {  
-        err=err + "Please Provide Valid Email!\n" ; 
-    }
-    else 
-    {*/
-      var email=document.regform.email.value;
-      $.ajax({
-          type: 'POST',
-          url: 'checkmail.php',
-          data: {
-          user_email:email,
-        },
-        success: function (response) {
-      if(response=="NO")	
-      {
-        err=err + "Email is already Taken!\n";	
-      }
-      else if(response=="YES")
-      {
-        err=err + "Email is not Taken!\n";
-      }
-
-      }
-      failure: fun()
-      {
-        err=err+"Failed";
-      }
-      });
-    //}
-    /*
-    if( document.regform.country.value == "")
+    if( country == null)
     {  
         err=err + "Please Select Country!\n" ; 
     }
-    if( document.regform.pass.value == "")
+    
+    if( email == "" || (chmail.test(email)==false))
     {  
-        err=err + "Please Provide Valid Password!" ; 
-    }*/
-    if (err!="")
-    {
-       alert(err);
-       return false;
+        err=err + "Please Provide Valid Email!\n" ;
+        if (err!="")
+        {
+          alert(err);
+          //return false;
+        }
+        
     }
-    else
+    else 
     {
-      alert("all set");
-       return true;
-    }
+      $.post("checkmail.php", 
+      { 
+        user_email : email
+      },
+      function(response,status){ 
+        
+            if(response=="NO")	
+            {
+              err=err + "Email is already Taken!\n";
+              alert(err);	
+            }
+            else if (response=="YES") 
+            {
+              if (err!="")
+              {
+                alert(err);
+                //return false;
+              }
+             
+            }
+      $("#regform")[0].reset();
+    });
+       
+  }
 } 
 </script>
 <!-- Header
@@ -283,7 +283,7 @@ function check() {
                   </div>
                   <div class="form-group col-xs-6">
                     <label for="country" class="sr-only"></label>
-                    <select name=country class="form-control" id="country">
+                    <select name="country" class="form-control" id="country">
                       <option value="country" disabled selected>Country</option>
                       <option value="AFG">Afghanistan</option>
                       <option value="ALA">�land Islands</option>
