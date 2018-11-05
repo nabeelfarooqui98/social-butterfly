@@ -20,7 +20,7 @@ if(isset($_POST['regbtn'])){
 
   $fname=strip_tags($_POST['firstname']);
   $lname=strip_tags($_POST['lastname']);
-  $email=strip_tags($_POST['Email']);
+  $email=strip_tags($_POST['email']);
   $pass=strip_tags($_POST['password']);
   $date=strip_tags($_POST['date']);
   $country=strip_tags($_POST['country']);
@@ -96,12 +96,14 @@ function check() {
     }
     else 
     {
+      
       $.post("checkmail.php", 
       { 
         user_email : email
       },
       function(response,status){ 
         
+        alert(response);
             if(response=="NO")	
             {
               err=err + "Email is already Taken!\n";
