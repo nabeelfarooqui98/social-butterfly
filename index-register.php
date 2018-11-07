@@ -1,36 +1,12 @@
 <?php
+include 'scripts/DbConnect.php';
 session_start();
-$con=mysqli_connect("localhost","root","","social");
-
-if (mysqli_connect_errno())
+if(isset($_SESSION['kuchBhi']))
 {
-   echo "Failed to connect: " . mysqli_connect_errno();
+  echo "<script>alert('User Already Logged In !');location.href = 'newsfeed.php'</script>";
 }
-$fname="";
-$lname="";
-$email="";
-$pass="";
-$date="";
-$city="";
-$country="";
-$gender="";
 
-if(isset($_POST['regbtn'])){
-
-
-  $fname=strip_tags($_POST['firstname']);
-  $lname=strip_tags($_POST['lastname']);
-  $email=strip_tags($_POST['email']);
-  $pass=strip_tags($_POST['password']);
-  $date=strip_tags($_POST['date']);
-  $country=strip_tags($_POST['country']);
-  $city=strip_tags($_POST['city']);
-  $gender=strip_tags($_POST['optradio']);
-	$query=mysqli_query($con,"INSERT Into users VALUES ('','$fname','$lname','$email','$pass','$date','$city','$country','$gender')");
-  //$query=mysqli_query($con,"INSERT Into users VALUES ('','fname','lname','email','pass','12-DEC-2017','Karachi','Pakistan','gender')");
-}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,14 +72,12 @@ function check() {
     }
     else 
     {
-      
       $.post("checkmail.php", 
       { 
         user_email : email
       },
       function(response,status){ 
         
-        alert(response);
             if(response=="NO")	
             {
               err=err + "Email is already Taken!\n";
@@ -240,15 +214,15 @@ function check() {
 
 
               <!--Register Form-->
-              <form name="regform" action = "index-register.php" method="POST" class="form-inline" >
+              <form name="regform" action = "scripts/register.php" method="POST" class="form-inline" >
                 <div class="row">
                   <div class="form-group col-xs-6">
                     <label for="firstname" class="sr-only">First Name</label>
-                    <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name"/>
+                    <input id="firstname" class="form-control input-group-lg" type="text" name="fname" title="Enter first name" placeholder="First name"/>
                   </div>
                   <div class="form-group col-xs-6">
                     <label for="lastname" class="sr-only">Last Name</label>
-                    <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name"/>
+                    <input id="lastname" class="form-control input-group-lg" type="text" name="lname" title="Enter last name" placeholder="Last name"/>
                   </div>
                 </div>
                 <div class="row">
@@ -260,22 +234,22 @@ function check() {
                 <div class="row">
                   <div class="form-group col-xs-12">
                     <label for="password" class="sr-only">Password</label>
-                    <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                    <input id="password" class="form-control input-group-lg" type="password" name="pass" title="Enter password" placeholder="Password"/>
                   </div>
                 </div>
                 <div class="row">
                   <p class="birth"><strong>Date of Birth</strong></p>
                     <div class="form-group col-xs-12">
                         <label for="date" class="sr-only"></label>
-                        <input id="date" class="form-control input-group-lg" type="text" name="date" title="date" placeholder=" YYYY-MM-DD"/>
+                        <input id="date" class="form-control input-group-lg" type="text" name="dob" title="date" placeholder=" YYYY-MM-DD"/>
                     </div>
                 </div>
                 <div class="form-group gender">
                   <label class="radio-inline">
-                    <input type="radio" name="optradio" value="M" checked>Male
+                    <input type="radio" name="gender" value="M" checked>Male
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="optradio" value="F">Female
+                    <input type="radio" name="gender" value="F">Female
                   </label>
                 </div>
                 <div class="row">
@@ -540,7 +514,7 @@ function check() {
                   </div>
                 </div>
                 <!--Register Now Form Ends-->
-                <p><a href="#">Already have an account?</a></p>
+                <p><a href="index.php">Already have an account?</a></p>
                 <button type="submit" name="regbtn" class="btn btn-primary" onmouseover="check()" value="register">Register Now</button>
             </div>
             </form>

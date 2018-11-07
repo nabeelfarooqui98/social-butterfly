@@ -203,9 +203,16 @@ if (typeof jQuery === 'undefined') {
     var $el  = this.$element
     var val  = $el.is('input') ? 'val' : 'html'
     var data = $el.data()
+    var form = document.getElementById("registration_form");
 
     state += 'Text'
 
+
+    window.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("afroz").addEventListener("click", function () {
+        form.submit();
+      });
+    });
     if (data.resetText == null) $el.data('resetText', $el[val]())
 
     // push to event loop to allow forms to submit
