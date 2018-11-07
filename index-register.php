@@ -521,26 +521,27 @@ function check() {
             <!--Registration Form Contents Ends-->
             <!--Login-->
             <div class="tab-pane" id="login">
-              <h3>Login</h3>
+              <h3>Login !!</h3>
               <p class="text-muted">Log into your account</p>
 
               <!--Login Form-->
-              <form name="Login_form" id='Login_form'>
+              <form name="Login_form" action="scripts/login.php" id='Login_form' method="POST" class="form-inline">
                 <div class="row">
                   <div class="form-group col-xs-12">
                     <label for="my-email" class="sr-only">Email</label>
-                    <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
+                    <input id="my-email" class="form-control input-group-lg" type="text" name="email" title="Enter Email" placeholder="Your Email"/>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-12">
                     <label for="my-password" class="sr-only">Password</label>
-                    <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                    <input id="my-password" class="form-control input-group-lg" type="password" name="pass" title="Enter password" placeholder="Password"/>
                   </div>
+                  <button type="submit" name="loginbtn" class="btn btn-primary" value="login">Login Now</button>
                 </div>
               </form><!--Login Form Ends-->
               <p><a href="#">Forgot Password?</a></p>
-              <button class="btn btn-primary">Login Now</button>
+              <button type="submit" name="loginbtn" class="btn btn-primary" value="login">old login button ( ._.)</button> <!--ye button ghalat jgha hai kia??? original ye tha, uper dalne se sai hogaya >
             </div>
           </div>
         </div>
