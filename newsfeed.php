@@ -1,5 +1,7 @@
 <?php
 include 'header.php';
+include 'scripts/DbConnect.php';
+
 ?>
     <div id="page-contents">
     	<div class="container">
@@ -41,12 +43,13 @@ include 'header.php';
 
             <!-- Post Create Box
             ================================================= -->
+            <form name="contentform" action = "scripts/sendpost.php" method="POST">
             <div class="create-post">
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
                     <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
-                    <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                    <textarea name="postcontent" id="postcontent" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                   </div>
                 </div>
             		<div class="col-md-5 col-sm-5">
@@ -57,11 +60,12 @@ include 'header.php';
                       <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
                       <li><a href="#"><i class="ion-map"></i></a></li>
                     </ul>
-                    <button class="btn btn-primary pull-right">Publish</button>
+                    <button type="submit" id="pubbtn" name="pubbtn" class="btn btn-primary pull-right">Publish</button>
                   </div>
                 </div>
             	</div>
-            </div><!-- Post Create Box End-->
+            </div>
+            </form><!-- Post Create Box End-->
 
             <!-- Post Content
             ================================================= -->
@@ -197,40 +201,6 @@ include 'header.php';
                   <div class="post-comment">
                     <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
                     <p><a href="timeline.php" class="profile-link">Richard</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                  </div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Post Content
-            ================================================= -->
-            <div class="post-content">
-              <div class="google-maps">
-                <div id="map" class="map"></div>
-              </div>
-              <div class="post-container">
-                <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
-                <div class="post-detail">
-                  <div class="user-info">
-                    <h5><a href="timeline.php" class="profile-link">Sophia Lee</a> <span class="following">following</span></h5>
-                    <p class="text-muted"><i class="icon ion-ios-location"></i> Went to Niagara Falls today</p>
-                  </div>
-                  <div class="reaction">
-                    <a class="btn text-green"><i class="icon ion-thumbsup"></i> 17</a>
-                    <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-text">
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.php" class="profile-link">Sarah </a>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <i class="em em-blush"></i> <i class="em em-blush"></i> </p>
                   </div>
                   <div class="post-comment">
                     <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />

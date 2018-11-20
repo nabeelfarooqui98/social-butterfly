@@ -34,8 +34,8 @@ if(isset($_SESSION['kuchBhi']))
   <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
 </head>
 <body>
-<script type="text/javascript">
 
+<script type="text/javascript">
 function check() {
   
   var err="";
@@ -48,48 +48,66 @@ function check() {
   
     if( fname == "" || !fname.match(alpha))
     {
-        err=err+ "Please Provide Valid First Name!\n" ;
+      $("#errfn").html("Please Provide Valid First Name!");  
+    }
+    else
+    {
+      $("#errfn").html("");
     } 
+
     if( pass == "")
     {  
-        err=err + "Please Provide Valid Password!\n" ; 
+      $("#errpass").html("Please Provide Valid Password!"); 
+    }
+    else
+    {
+      $("#errpass").html("");
     }
     
     if( country == null)
     {  
-        err=err + "Please Select Country!\n" ; 
+      $("#errcon").html("Please Select Country!"); 
     }
-    
+    else
+    {
+      $("#errcon").html("");
+    }
     if( email == "" || (chmail.test(email)==false))
     {  
         err=err + "Please Provide Valid Email!\n" ;
         if (err!="")
         {
-          alert(err);
+          $("#errem").html("Please Provide Valid Email!");
+          //alert(err);
           //return false;
         }
         
     }
     else 
     {
+
       $.post("checkmail.php", 
       { 
         user_email : email
       },
       function(response,status){ 
-        
+          
             if(response=="NO")	
             {
-              err=err + "Email is already Taken!\n";
-              alert(err);	
+              $("#errem").html("Email is already Taken!");
+              //err=err + "Email is already Taken!\n";
+              //alert(response);	
             }
             else if (response=="YES") 
             {
+              $("#errem").html("saaas");
+              /*
               if (err!="")
               {
-                alert(err);
+                $("#errcon").html("");
+                //alert(err);
                 //return false;
-              }
+              }*/
              
             }
       $("#regform")[0].reset();
@@ -219,6 +237,7 @@ function check() {
                   <div class="form-group col-xs-6">
                     <label for="firstname" class="sr-only">First Name</label>
                     <input id="firstname" class="form-control input-group-lg" type="text" name="fname" title="Enter first name" placeholder="First name"/>
+                    <p style="color:Tomato;" id="errfn" name="errfn"><small></small></p>
                   </div>
                   <div class="form-group col-xs-6">
                     <label for="lastname" class="sr-only">Last Name</label>
@@ -229,12 +248,14 @@ function check() {
                   <div class="form-group col-xs-12">
                     <label for="email" class="sr-only">Email</label>
                     <input id="email" class="form-control input-group-lg" type="text" name="email" title="Enter Email" placeholder="Your Email"/>
+                    <p style="color:Tomato;" id="errem" name="errem"><small></small></p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-12">
                     <label for="password" class="sr-only">Password</label>
                     <input id="password" class="form-control input-group-lg" type="password" name="pass" title="Enter password" placeholder="Password"/>
+                    <p style="color:Tomato;" id="errpass" name="errpass"><small></small></p>                  
                   </div>
                 </div>
                 <div class="row">
@@ -511,6 +532,7 @@ function check() {
                       <option value="ZMB">Zambia</option>
                       <option value="ZWE">Zimbabwe</option>
                     </select>
+                    <p style="color:Tomato;" id="errcon" name="errcon"><small></small></p>
                   </div>
                 </div>
                 <!--Register Now Form Ends-->
@@ -550,7 +572,7 @@ function check() {
     <div class="row">
       <div class="col-sm-6 col-sm-offset-6">
 
-        <!--Social Icons-->
+        <--Social Icons-->
         <ul class="list-inline social-icons">
           <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
           <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
