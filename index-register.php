@@ -35,20 +35,25 @@ if(isset($_SESSION['kuchBhi']))
 </head>
 <body>
 
-<script type="text/javascript">
+<script type="text/javascript">  
 function check() {
   
-  var err="";
+  var err=0;
   var alpha = /^[a-zA-Z\s-, ]+$/; 
   var chmail = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
   var fname=$("#firstname").val();
   var email = $("#email").val();
   var pass = $("#password").val();
   var country=$("#country").val();
-  
+  var lname=$("#lastname").val();
+  var dob=$("#date").val();
+  var gender=$('input[name=gender]:checked').val();
+  var city=$("#city").val();
+
     if( fname == "" || !fname.match(alpha))
     {
-      $("#errfn").html("Please Provide Valid First Name!");  
+      $("#errfn").html("Please Provide Valid First Name!");
+      err=1;
     }
     else
     {
@@ -57,7 +62,8 @@ function check() {
 
     if( pass == "")
     {  
-      $("#errpass").html("Please Provide Valid Password!"); 
+      $("#errpass").html("Please Provide Valid Password!");
+      err=1; 
     }
     else
     {
@@ -66,7 +72,8 @@ function check() {
     
     if( country == null)
     {  
-      $("#errcon").html("Please Select Country!"); 
+      $("#errcon").html("Please Select Country!");
+      err=1; 
     }
     else
     {
@@ -77,43 +84,63 @@ function check() {
         err=err + "Please Provide Valid Email!\n" ;
         if (err!="")
         {
+          err=1;
           $("#errem").html("Please Provide Valid Email!");
-          //alert(err);
-          //return false;
+          
         }
         
     }
     else 
     {
-
+      
       $.post("checkmail.php", 
       { 
         user_email : email
       },
-      function(response,status){ 
-          
-            if(response=="NO")	
-            {
-              $("#errem").html("Email is already Taken!");
-              //err=err + "Email is already Taken!\n";
-              //alert(response);	
-            }
-            else if (response=="YES") 
-            {
-              $("#errem").html("saaas");
-              /*
-              if (err!="")
-              {
-                $("#errcon").html("");
-                //alert(err);
-                //return false;
-              }*/
+      function(response,status)
+      {
+        var e=response.trim();
              
+            if(e=="NO")	
+            {
+                       
+              $("#errem").html("Email is already Taken!");
+              err=1;
             }
-      $("#regform")[0].reset();
-    });
-       
-  }
+            else 
+            {  
+              $("#errem").html("");
+              if (err==1)
+              {
+                
+                  
+              }
+              else 
+              {
+                $.post("../social-butterfly/scripts/register.php", 
+                {
+
+                  l_name : lname,
+                  f_name : fname,
+                  e_mail : email,
+                  d_ob : dob,
+                  c_ity : city,
+                  c_ountry : country,
+                  genderr : gender,
+                  p_ass : pass
+
+                },
+                function(response,status)
+                {
+                    alert(response);
+                }
+              );
+              
+            }
+          }
+      });   
+     // $("#regform")[0].reset();
+    }
 } 
 </script>
 <!-- Header
@@ -262,7 +289,7 @@ function check() {
                   <p class="birth"><strong>Date of Birth</strong></p>
                     <div class="form-group col-xs-12">
                         <label for="date" class="sr-only"></label>
-                        <input id="date" class="form-control input-group-lg" type="text" name="dob" title="date" placeholder=" YYYY-MM-DD"/>
+                        <input type="date" id="date" class="form-control input-group-lg" type="text" name="dob" title="date" />
                     </div>
                 </div>
                 <div class="form-group gender">
@@ -537,7 +564,7 @@ function check() {
                 </div>
                 <!--Register Now Form Ends-->
                 <p><a href="index.php">Already have an account?</a></p>
-                <button type="submit" name="regbtn" class="btn btn-primary" onmouseover="check()" value="register">Register Now</button>
+                <button type="button" onclick="check()" name="regbtn" id="regbtn" class="btn btn-primary" value="register">Register Now</button>
             </div>
             </form>
             <!--Registration Form Contents Ends-->

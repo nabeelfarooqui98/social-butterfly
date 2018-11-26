@@ -2,13 +2,11 @@
 include 'DbConnect.php';
 if(isset($_POST['pubbtn']))
 {
-    echo "<script>alert('sagasjcasgb')</script>";
+    
 
     $postcontent = $_POST['postcontent'];
-    $ins = "INSERT INTO users(fname) VALUES('ASD')";
     
-    //$ins = "SELECT * FROM posts";
-//    $ex_ins = $con->query($ins);
+    $ins = "INSERT INTO POSTS VALUES('',2,'$postcontent')";
 
     if($con->query($ins))
         {
