@@ -59,7 +59,11 @@ include 'scripts/DbConnect.php';
 
             <!-- Post Content
             ================================================= -->
-            <div class="post-content">
+
+          <?php
+            $i =0;
+            while($i<=5): ?>
+              <div class="post-content">
               <img src="http://placehold.it/1920x1280" alt="post-image" class="img-responsive post-image" />
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
@@ -92,7 +96,9 @@ include 'scripts/DbConnect.php';
                 </div>
               </div>
             </div>
-
+        <?php 
+           $i++; 
+          endwhile; ?>
             <!-- Post Content
             ================================================= -->
             <div class="post-content">
