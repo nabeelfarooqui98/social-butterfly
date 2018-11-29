@@ -44,6 +44,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right main-menu">
+                    <li class="dropdown"><a href="Search.php" class="button">Search User</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
                         <ul class="dropdown-menu newsfeed-home">
@@ -79,6 +80,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
                         <ul class="dropdown-menu page-list">
+
                             <li><a href="index.php">Landing Page 1</a></li>
                             <li><a href="index-register.php">Landing Page 2</a></li>
                             <li><a href="newsfeed.php">Newsfeed</a></li>
@@ -96,13 +98,14 @@
                         </ul>
                     </li>
                     <li class="dropdown"><a href="contact.php">Contact</a></li>
+
                 </ul>
-                <form class="navbar-form navbar-right hidden-sm">
-                    <div class="form-group">
-                        <i class="icon ion-android-search"></i>
-                        <input type="text" class="form-control" placeholder="Search friends, photos, videos">
-                    </div>
-                </form>
+
+<!--                <form class="navbar-form navbar-right hidden-sm">-->
+<!--                    <div class="form-group">-->
+<!--                        <a href="Search.php" class="button">Search User</a>-->
+<!--                    </div>-->
+<!--                </form>-->
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
