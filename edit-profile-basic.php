@@ -1,5 +1,7 @@
 <?php
+session_start();
 include 'header.php';
+include 'scripts/DbConnect.php';
 ?>
 
 <div class="container">
@@ -8,49 +10,25 @@ include 'header.php';
       ================================================= -->
       <div class="timeline">
         <div class="timeline-cover">
+          <?php
+          include 'tlmenu.php';
+          ?>
 
-          <!--Timeline Menu for Large Screens-->
-          <div class="timeline-nav-bar hidden-sm hidden-xs">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="profile-info">
-                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
-                  <p class="text-muted">Creative Director</p>
-                </div>
-              </div>
-              <div class="col-md-9">
-                <ul class="list-inline profile-menu">
-                  <li><a href="timeline.php">Timeline</a></li>
-                  <li><a href="timeline-about.php" class="active">About</a></li>
-                  <li><a href="timeline-album.php">Album</a></li>
-                  <li><a href="timeline-friends.php">Friends</a></li>
-                </ul>
-                <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
-                </ul>
-              </div>
-            </div>
-          </div><!--Timeline Menu for Large Screens End-->
+          <?php
+          if(!isset($_SESSION['kuchBhi']))
+          {
+            echo "<script>alert('Login Required !');location.href = 'index-register.php'</script>";
+          }
+          $email = $_SESSION['kuchBhi'];
+          //echo "$email is Logged In<br>";
+          $sel = "SELECT * FROM users WHERE email = '$email'";
+          $ex_sel = $con->query($sel);
+          $data = mysqli_fetch_array($ex_sel);
+          $name = $data['fname'] . " " . $data['lname'];
+          $id = $data['id'];
+          $image = $data['image'];
 
-          <!--Timeline Menu for Small Screens-->
-          <div class="navbar-mobile hidden-lg hidden-md">
-            <div class="profile-info">
-              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
-            </div>
-            <div class="mobile-menu">
-              <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.php" class="active">About</a></li>
-                <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
-              </ul>
-              <button class="btn-primary">Add Friend</button>
-            </div>
-          </div><!--Timeline Menu for Small Screens End-->
+          ?>
 
         </div>
         <div id="page-contents">
@@ -78,116 +56,47 @@ include 'header.php';
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="basic-info" id="basic-info" class="form-inline">
+                  <form class="form-inline" method="post" action="scripts/updateprof.php"  enctype="multipart/form-data">
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="firstname">First name</label>
-                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name" value="John" />
+                        <input id="firstname" class="form-control input-group-lg" name="fname" type="text" name="firstname" title="Enter first name" placeholder="First name" value="<?php echo $data['fname']; ?>" />
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="lastname" class="">Last name</label>
-                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name" value="Doe" />
+                        <input id="lastname" class="form-control input-group-lg" name="lname" type="text" name="lastname" title="Enter last name" placeholder="Last name" value="<?php echo $data['lname']; ?>" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email">My email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="My Email" value="razor.venon@gmail.com" />
+                        <input id="email" class="form-control input-group-lg" name="email" type="text" name="Email" title="Enter Email" placeholder="My Email" value="<?php echo $data['email']; ?>" />
                       </div>
                     </div>
                     <div class="row">
                       <p class="custom-label"><strong>Date of Birth</strong></p>
                       <div class="form-group col-sm-3 col-xs-6">
-                        <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="day">
-                          <option value="Day">Day</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>13</option>
-                          <option>14</option>
-                          <option>15</option>
-                          <option>16</option>
-                          <option>17</option>
-                          <option>18</option>
-                          <option selected>19</option>
-                          <option>20</option>
-                          <option>21</option>
-                          <option>22</option>
-                          <option>23</option>
-                          <option>24</option>
-                          <option>25</option>
-                          <option>26</option>
-                          <option>27</option>
-                          <option>28</option>
-                          <option>29</option>
-                          <option>30</option>
-                          <option>31</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-sm-3 col-xs-6">
-                        <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="month">
-                          <option value="month">Month</option>
-                          <option>Jan</option>
-                          <option>Feb</option>
-                          <option>Mar</option>
-                          <option>Apr</option>
-                          <option>May</option>
-                          <option>Jun</option>
-                          <option>Jul</option>
-                          <option>Aug</option>
-                          <option>Sep</option>
-                          <option>Oct</option>
-                          <option>Nov</option>
-                          <option selected>Dec</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-sm-6 col-xs-12">
-                        <label for="year" class="sr-only"></label>
-                        <select class="form-control" id="year">
-                          <option value="year">Year</option>
-                          <option selected>2000</option>
-                          <option>2001</option>
-                          <option>2002</option>
-                          <option>2004</option>
-                          <option>2005</option>
-                          <option>2006</option>
-                          <option>2007</option>
-                          <option>2008</option>
-                          <option>2009</option>
-                          <option>2010</option>
-                          <option>2011</option>
-                          <option>2012</option>
-                        </select>
-                      </div>
+                        <label for="dob" class="sr-only"> </label>
+                        <input name="dob" type="date" id="dob" class="form-control input-group-lg" />
+                       </div>
                     </div>
                     <div class="form-group gender">
-                      <span class="custom-label"><strong>I am a: </strong></span>
+                      <span  class="custom-label"><strong>I am a: </strong></span>
                       <label class="radio-inline">
-                        <input type="radio" name="optradio" checked>Male
+                        <input type="radio" value="<?php echo $data['gender']; ?>" name="gender" checked>Male
                       </label>
                       <label class="radio-inline">
-                        <input type="radio" name="optradio">Female
+                        <input type="radio" value="<?php echo $data['gender']; ?>" name="gender">Female
                       </label>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="city"> My city</label>
-                        <input id="city" class="form-control input-group-lg" type="text" name="city" title="Enter city" placeholder="Your city" value="New York"/>
+                        <input id="city" class="form-control input-group-lg" type="text" name="city" title="Enter city" placeholder="Your city" value="<?php echo $data['city']; ?>"/>
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="country">My country</label>
-                        <select class="form-control" id="country">
+                        <select name="country" class="form-control" id="country">
                           <option value="country">Country</option>
                           <option value="AFG">Afghanistan</option>
                           <option value="ALA">Ƭand Islands</option>
@@ -424,7 +333,7 @@ include 'header.php';
                           <option value="UKR">Ukraine</option>
                           <option value="ARE">United Arab Emirates</option>
                           <option value="GBR">United Kingdom</option>
-                          <option value="USA" selected>United States</option>
+                          <option value="USA">United States</option>
                           <option value="UMI">United States Minor Outlying Islands</option>
                           <option value="URY">Uruguay</option>
                           <option value="UZB">Uzbekistan</option>
@@ -444,10 +353,18 @@ include 'header.php';
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-info">About me</label>
-                        <textarea id="my-info" name="information" class="form-control" placeholder="Some texts about me" rows="4" cols="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur</textarea>
+                        <textarea name="info" value= class="form-control" placeholder="Some texts about me" rows="4" cols="400">Write something about your self</textarea>
                       </div>
                     </div>
-                    <button class="btn btn-primary">Save Changes</button>
+                      <div class="form-group col-sm-10">
+                        <label for="dp" class="cols-sm-2 control-label">Choose your Display Picture</label>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-file fa-lg" aria-hidden="true"></i></span>
+                            <input type="file" class="form-control" name="image" value="<?php $image?>" >
+                            <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>">
+                          </div>
+                      </div>
+                    <button name="savebtn" type="submit" class="btn btn-primary">Save Changes</button>
                   </form>
                 </div>
               </div>

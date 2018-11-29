@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'header.php';
 ?>
 
@@ -8,49 +9,9 @@ include 'header.php';
       ================================================= -->
       <div class="timeline">
         <div class="timeline-cover">
-
-          <!--Timeline Menu for Large Screens-->
-          <div class="timeline-nav-bar hidden-sm hidden-xs">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="profile-info">
-                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
-                  <p class="text-muted">Creative Director</p>
-                </div>
-              </div>
-              <div class="col-md-9">
-                <ul class="list-inline profile-menu">
-                  <li><a href="timeline.php">Timeline</a></li>
-                  <li><a href="timeline-about.php" class="active">About</a></li>
-                  <li><a href="timeline-album.php">Album</a></li>
-                  <li><a href="timeline-friends.php">Friends</a></li>
-                </ul>
-                <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
-                </ul>
-              </div>
-            </div>
-          </div><!--Timeline Menu for Large Screens End-->
-
-          <!--Timeline Menu for Small Screens-->
-          <div class="navbar-mobile hidden-lg hidden-md">
-            <div class="profile-info">
-              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
-            </div>
-            <div class="mobile-menu">
-              <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.php" class="active">About</a></li>
-                <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
-              </ul>
-              <button class="btn-primary">Add Friend</button>
-            </div>
-          </div><!--Timeline Menu for Small Screens End-->
+          <?php
+          include 'tlmenu.php';
+          ?>
 
         </div>
         <div id="page-contents">
@@ -81,30 +42,92 @@ include 'header.php';
                   <form name="education" id="education" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="school">My university</label>
+                        <label for="school">My School</label>
+                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Enter School" placeholder="My School" />
+                      </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-sm-6 col-xs-12">
+                      <label for="year">School Passing Year </label>
+                      <select class="form-control" id="year">
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
+                        <option>2011</option>
+                        <option>2012</option>
+                      </select>
+                    </div>
+                      </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="school">My College</label>
+                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Enter School" placeholder="My School" />
+                      </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-sm-6 col-xs-12">
+                      <label for="year">College Passing Year </label>
+                      <select class="form-control" id="year">
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
+                        <option>2011</option>
+                        <option>2012</option>
+                      </select>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="school">My University</label>
                         <input id="school" class="form-control input-group-lg" type="text" name="school" title="Enter School" placeholder="My School" value="Harvard Unversity" />
                       </div>
                     </div>
                     <div class="row">
-                      <div class="form-group col-xs-6">
-                        <label for="date-from">From</label>
-                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="from" value="2012" />
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="date-to" class="">To</label>
-                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="to" value="2016" />
+                      <div class="form-group col-sm-6 col-xs-12">
+                        <label for="year">University Passing Year </label>
+                        <select class="form-control" id="year">
+                          <option>2000</option>
+                          <option>2001</option>
+                          <option>2002</option>
+                          <option>2004</option>
+                          <option>2005</option>
+                          <option>2006</option>
+                          <option>2007</option>
+                          <option>2008</option>
+                          <option>2009</option>
+                          <option>2010</option>
+                          <option>2011</option>
+                          <option>2012</option>
+                          <option>2013</option>
+                          <option>2014</option>
+                          <option>2015</option>
+                          <option>2016</option>
+                          <option>2017</option>
+                          <option>2018</option>
+                          <option>Under Graduate</option>
+
+                        </select>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="edu-description">Description</label>
-                        <textarea id="edu-description" name="description" class="form-control" placeholder="Some texts about my education" rows="4" cols="400">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</textarea>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="graduate">Graduated?:-</label>
-                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Yes!! 
+                        <textarea id="edu-description" name="description" type="text" class="form-control" placeholder="Some texts about my education" rows="4" cols="400"></textarea>
                       </div>
                     </div>
                     <button class="btn btn-primary">Save Changes</button>
@@ -160,34 +183,10 @@ include 'header.php';
             <div class="col-md-2 static">
               
               <!--Sticky Timeline Activity Sidebar-->
-              <div id="sticky-sidebar">
-                <h4 class="grey">Sarah's activity</h4>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
-                    <p class="text-muted">5 mins ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
-                    <p class="text-muted">an hour ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
-                    <p class="text-muted">4 hours ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
-                    <p class="text-muted">a day ago</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <?php
+              include 'sidebar.php';
+              ?>
+             </div>
           </div>
         </div>
       </div>

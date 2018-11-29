@@ -1,5 +1,7 @@
 <?php
+session_start();
 include 'header.php';
+include 'scripts/DbConnect.php';
 ?>
 
 <div class="container">
@@ -8,56 +10,30 @@ include 'header.php';
       ================================================= -->
       <div class="timeline">
         <div class="timeline-cover">
+          <?php
+          include 'tlmenu.php';
+          ?>
 
-          <!--Timeline Menu for Large Screens-->
-          <div class="timeline-nav-bar hidden-sm hidden-xs">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="profile-info">
-                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
-                  <p class="text-muted">Creative Director</p>
-                </div>
-              </div>
-              <div class="col-md-9">
-                <ul class="list-inline profile-menu">
-                  <li><a href="timeline.php" class="active">Timeline</a></li>
-                  <li><a href="timeline-about.php">About</a></li>
-                  <li><a href="timeline-album.php">Album</a></li>
-                  <li><a href="timeline-friends.php">Friends</a></li>
-                </ul>
-                <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
-                </ul>
-              </div>
-            </div>
-          </div><!--Timeline Menu for Large Screens End-->
+          <?php
+          if(!isset($_SESSION['kuchBhi']))
+          {
+            echo "<script>alert('Login Required !');location.href = 'index-register.php'</script>";
+          }
+          $email = $_SESSION['kuchBhi'];
+          //echo "$email is Logged In<br>";
+          $sel = "SELECT * FROM users WHERE email = '$email'";
+          $ex_sel = $con->query($sel);
+          $data = mysqli_fetch_array($ex_sel);
+          $name = $data['fname'] . " " . $data['lname'];
 
-          <!--Timeline Menu for Small Screens-->
-          <div class="navbar-mobile hidden-lg hidden-md">
-            <div class="profile-info">
-              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
-            </div>
-            <div class="mobile-menu">
-              <ul class="list-inline">
-                <li><a href="timline.html" class="active">Timeline</a></li>
-                <li><a href="timeline-about.php">About</a></li>
-                <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
-              </ul>
-              <button class="btn-primary">Add Friend</button>
-            </div>
-          </div><!--Timeline Menu for Small Screens End-->
+          ?>
+
 
         </div>
         <div id="page-contents">
           <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-7">
-
               <!-- Post Create Box
               ================================================= -->
               <div class="create-post">
@@ -212,33 +188,9 @@ include 'header.php';
 
             </div>
             <div class="col-md-2 static">
-              <div id="sticky-sidebar">
-                <h4 class="grey">Sarah's activity</h4>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
-                    <p class="text-muted">5 mins ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
-                    <p class="text-muted">an hour ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
-                    <p class="text-muted">4 hours ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
-                    <p class="text-muted">a day ago</p>
-                  </div>
-                </div>
-              </div>
+              <?php
+              include 'sidebar.php';
+              ?>
             </div>
           </div>
         </div>
