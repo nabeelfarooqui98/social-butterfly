@@ -1,6 +1,10 @@
 <?php
 include 'header.php';
 include 'scripts/DbConnect.php';
+//include './scripts/login.php';
+
+//print_r($_GET);
+
 
 ?>
     <div id="page-contents">
@@ -23,20 +27,6 @@ include 'scripts/DbConnect.php';
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.php">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.php">Videos</a></div></li>
             </ul><!--news-feed links ends-->
-            <div id="chat-block">
-              <div class="title">Chat online</div>
-              <ul class="online-users list-inline">
-                <li><a href="newsfeed-messages.php" title="Linda Lohan"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Sophia Lee"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="John Doe"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Alexis Clark"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="James Carter"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Robert Cook"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Richard Bell"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Anna Young"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Julia Cox"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-              </ul>
-            </div><!--chat block ends-->
           </div>
           
     			<div class="col-md-7">
@@ -242,53 +232,9 @@ include 'scripts/DbConnect.php';
               </div>
             </div>
           </div>
-
-          <!-- Newsfeed Common Side Bar Right
-          ================================================= -->
-    			<div class="col-md-2 static">
-            <div class="suggestions" id="sticky-sidebar">
-              <h4 class="grey">Who to Follow</h4>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Diana Amber</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Cris Haris</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Brian Walton</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Olivia Steward</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.php">Sophia Page</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-            </div>
-          </div>
     		</div>
     	</div>
     </div>
-
 <?php
 include 'footer.php';
 ?>
