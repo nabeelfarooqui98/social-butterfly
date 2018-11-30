@@ -54,7 +54,7 @@ include 'scripts/DbConnect.php';
 ?>
 <!--<div class="container">-->
 <!---->
-<!--    <!-- Timeline-->
+<!--    <-- Timeline-->
 <!--    ================================================= -->-->
 <!--    <div class="timeline">-->
 <!--        <div id="page-contents">-->
@@ -64,7 +64,7 @@ include 'scripts/DbConnect.php';
 
 
 
-<!--                    <!-- Friend List-->
+<!--                    <-- Friend List-->
 <!--                    ================================================= -->
 <!--                    <div class="friend-list">-->
 <!--                        <div class="row">-->

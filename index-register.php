@@ -1,6 +1,6 @@
 <?php
-include 'scripts/DbConnect.php';
 session_start();
+include 'scripts/DbConnect.php';
 if(isset($_SESSION['kuchBhi']))
 {
   echo "<script>alert('User Already Logged In !');location.href = 'newsfeed.php'</script>";
@@ -133,6 +133,7 @@ function check() {
                 function(response,status)
                 {
                     alert(response);
+                    location.href = '../social-butterfly/newsfeed.php';
                 }
               );
               

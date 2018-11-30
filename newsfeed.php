@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'header.php';
 include 'scripts/DbConnect.php';
 //include './scripts/login.php';
@@ -7,6 +8,7 @@ include 'scripts/DbConnect.php';
 
 
 ?>
+
     <div id="page-contents">
     	<div class="container">
     		<div class="row">
@@ -26,6 +28,7 @@ include 'scripts/DbConnect.php';
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.php">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.php">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.php">Videos</a></div></li>
+              <li><i class="icon ion-ios-videocam"></i><div><a href="../social-butterfly/scripts/logout.php">Log Out</a></div></li>
             </ul><!--news-feed links ends-->
           </div>
           
@@ -55,15 +58,21 @@ include 'scripts/DbConnect.php';
                 </div>
             	</div>
             </div>
-            </form><!-- Post Create Box End-->
+          </form>
+                   
+            <!-- Post Create Box End-->
 
             <!-- Post Content
             ================================================= -->
 
           <?php
-            $i =0;
-            while($i<=5): ?>
-              <div class="post-content">
+             
+             $id=$_SESSION['user_id'];
+              $gett="SELECT * FROM posts WHERE user_id='$id'";
+              $query=mysqli_query($con,$gett) or die('error');
+              while($row=mysqli_fetch_array($query,MYSQLI_ASSOC)){
+              ?>
+              <div class="post-content"> 
               <img src="http://placehold.it/1920x1280" alt="post-image" class="img-responsive post-image" />
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
@@ -78,11 +87,12 @@ include 'scripts/DbConnect.php';
                   </div>
                   <div class="line-divider"></div>
                   <div class="post-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                   <?php echo("<p>" . $row['content'] ."</p>"); ?>
                   </div>
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                    <img src="images/prof/<?php echo $image; ?>" alt="" class="profile-photo-sm">
                     <p><a href="timeline.php" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                   </div>
                   <div class="post-comment">
@@ -97,8 +107,8 @@ include 'scripts/DbConnect.php';
               </div>
             </div>
         <?php 
-           $i++; 
-          endwhile; ?>
+          }
+          ?>
             <!-- Post Content
             ================================================= -->
             <div class="post-content">
