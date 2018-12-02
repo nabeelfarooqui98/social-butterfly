@@ -1,4 +1,5 @@
 <?php
+sesson_start();
 include 'header.php';
 include 'scripts/DbConnect.php';
 
