@@ -6,9 +6,12 @@ if(!isset($_SESSION['kuchBhi']))
 }
 $email = $_SESSION['kuchBhi'];
 //echo "$email is Logged In<br>";
-$sel = "SELECT * FROM users WHERE email != '$email '";
+//$sel = "SELECT * FROM users WHERE email != '$email '";
+$id = $_GET['uid'];
+$sel = "SELECT * FROM users WHERE id = " . $id ;
 $ex_sel = $con->query($sel);
 $data = mysqli_fetch_array($ex_sel);
+
 
 $Recname = $data['fname'] . " " . $data['lname'];
 $Recimage= $data['image'];
@@ -21,7 +24,7 @@ $Recimage= $data['image'];
             <div class="profile-info">
                 <img src="images/prof/<?php echo $Recimage; ?>" alt="" class="img-responsive profile-photo">
                 <h3><?php echo $Recname ?></h3>
-                <p class="text-muted">Creative Director</p>
+                <p class="text-muted">Creative Diaaarector</p>
             </div>
         </div>
         <div class="col-md-9">

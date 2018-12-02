@@ -22,10 +22,15 @@ include 'scripts/DbConnect.php';
                 $email = $_SESSION['kuchBhi'];
                 //echo "$email is Logged In<br>";
                 //$recName=$_GET['Recname'];
-                $sel = "SELECT * FROM users WHERE email!='$email'";
+                $id = $_GET['uid'];
+                //echo "my ID::: " . $id;
+                //$sel = "SELECT * FROM users WHERE email!='$email'";
+                $sel = "SELECT * FROM users WHERE id = " . $id ;
+                //echo "queeeery: " . $sel;
                 $ex_sel = $con->query($sel);
                 $data = mysqli_fetch_array($ex_sel);
                 $name = $data['fname'] . " " . $data['lname'];
+                echo "name::::::" . $name;
                 $recid=$data['id'];
 
                 ?>
