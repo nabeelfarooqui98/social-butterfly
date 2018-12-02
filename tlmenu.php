@@ -32,7 +32,6 @@ $image= $data['image'];
             </ul>
             <ul class="follow-me list-inline">
                 <li>1,299 people following her</li>
-                <li><button class="btn-primary">Add Friend</button></li>
             </ul>
         </div>
     </div>
@@ -52,6 +51,6 @@ $image= $data['image'];
             <li><a href="timeline-album.php">Album</a></li>
             <li><a href="timeline-friends.php">Friends</a></li>
         </ul>
-        <button class="btn-primary">Add Friend</button>
     </div>
 </div><!--Timeline Menu for Small Screens End-->
+
