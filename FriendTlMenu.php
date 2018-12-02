@@ -6,15 +6,25 @@ if(!isset($_SESSION['kuchBhi']))
 }
 $email = $_SESSION['kuchBhi'];
 //echo "$email is Logged In<br>";
-//$sel = "SELECT * FROM users WHERE email != '$email '";
-$id = $_GET['uid'];
-$sel = "SELECT * FROM users WHERE id = " . $id ;
+$query = "SELECT * FROM users WHERE email = '$email '";
+$ex_query=$con->query($query);
+$row=mysqli_fetch_array($ex_query);
+$userid=$row['id'];
+//echo "userid : $userid";
+
+$Recid = $_GET['uid'];
+
+
+
+$sel = "SELECT * FROM users WHERE id = " . $Recid ;
 $ex_sel = $con->query($sel);
 $data = mysqli_fetch_array($ex_sel);
-
-
 $Recname = $data['fname'] . " " . $data['lname'];
 $Recimage= $data['image'];
+//echo "hi";
+//echo "\n myid: $userid";
+//echo "\n receiver id: $Recid";
+//echo "hiiii";
 ?>
 
 <!--Timeline Menu for Large Screens-->
@@ -36,17 +46,31 @@ $Recimage= $data['image'];
             </ul>
             <ul class="follow-me list-inline">
                 <li>1,299 people following her</li>
-                <li><button class="btn-primary">Add Friend</button></li>
+                <?php
+                $newQuery="SELECT * FROM `friendrequest` WHERE `sender_id` = $userid AND `receiver_id` = $Recid";
+                $execute = $con->query($newQuery);
+                $row1= mysqli_fetch_array($execute);
+                if (!$row1){
+                ?>
+                <form class="addfriend" action="scripts/AddFriend.php?uid=<?php echo $userid; ?>&Recid=<?php echo $Recid; ?>" method="post">
+                <input <button type="submit" name="addbtn" class="btn btn-primary" value="Add Friend"></button>
+                </form>
+                <?php
+                }
+                ?>
+<!--                <li><a href="#">button</a></li>-->
             </ul>
+<!--                <button type="button" name="addbtn" class="btn btn-primary" value="addfriend">Add Friend</button>-->
         </div>
+
     </div>
 </div><!--Timeline Menu for Large Screens End-->
 
 <!--Timeline Menu for Small Screens-->
 <div class="navbar-mobile hidden-lg hidden-md">
     <div class="profile-info">
-        <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-        <h4>Sarah Cruiz</h4>
+        <img src="images/prof/<?php echo $Recimage; ?>" alt="" class="img-responsive profile-photo" />
+        <h4><?php echo $Recname ?></h4>
         <p class="text-muted">Creative Director</p>
     </div>
     <div class="mobile-menu">
@@ -56,6 +80,17 @@ $Recimage= $data['image'];
             <li><a href="timeline-album.php">Album</a></li>
             <li><a href="timeline-friends.php">Friends</a></li>
         </ul>
-        <button class="btn-primary">Add Friend</button>
+        <?php
+        $newQuery="SELECT * FROM `friendrequest` WHERE `sender_id` = $userid AND `receiver_id` = $Recid";
+        $execute = $con->query($newQuery);
+        $row1= mysqli_fetch_array($execute);
+        if (!$row1){
+            ?>
+            <form class="addfriend" action="scripts/AddFriend.php?uid=<?php echo $userid; ?>&Recid=<?php echo $Recid; ?>" method="post">
+                <input <button type="submit" name="addbtn" class="btn btn-primary" value="Add Friend" ></button>
+            </form>
+            <?php
+        }
+        ?>
     </div>
 </div><!--Timeline Menu for Small Screens End-->
