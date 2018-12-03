@@ -39,7 +39,7 @@ if(isset($_SESSION['kuchBhi']))
 function check() {
   
   var err=0;
-  var alpha = /^[a-zA-Z\s-, ]+$/; 
+  var alpha = /^[a-zA-Z\s-]+$/;
   var chmail = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
   var fname=$("#firstname").val();
   var email = $("#email").val();
@@ -126,6 +126,7 @@ function check() {
                   d_ob : dob,
                   c_ity : city,
                   c_ountry : country,
+
                   genderr : gender,
                   p_ass : pass
 
@@ -295,10 +296,10 @@ function check() {
                 </div>
                 <div class="form-group gender">
                   <label class="radio-inline">
-                    <input type="radio" name="gender" value="M" checked>Male
+                    <input type="radio" name="gender" value="Male" checked>Male
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="gender" value="F">Female
+                    <input type="radio" name="gender" value="Female">Female
                   </label>
                 </div>
                 <div class="row">
@@ -591,7 +592,6 @@ function check() {
                 </div>
               </form><!--Login Form Ends-->
               <p><a href="#">Forgot Password?</a></p>
-              <button type="submit" name="loginbtn" class="btn btn-primary" value="login">old login button ( ._.)</button> <!--ye button ghalat jgha hai kia??? original ye tha, uper dalne se sai hogaya >
             </div>
           </div>
         </div>

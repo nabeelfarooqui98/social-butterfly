@@ -83,10 +83,10 @@ include 'scripts/DbConnect.php';
                     <div class="form-group gender">
                       <span  class="custom-label"><strong>I am a: </strong></span>
                       <label class="radio-inline">
-                        <input type="radio" value="<?php echo $data['gender']; ?>" name="gender" checked>Male
+                        <input type="radio" value="Male" name="gender">Male
                       </label>
                       <label class="radio-inline">
-                        <input type="radio" value="<?php echo $data['gender']; ?>" name="gender">Female
+                        <input type="radio" value="Female" name="gender">Female
                       </label>
                     </div>
                     <div class="row">

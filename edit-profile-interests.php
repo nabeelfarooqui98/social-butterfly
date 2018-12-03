@@ -40,11 +40,11 @@ include 'header.php';
                 </div>
                 <div class="edit-block">
                   <ul class="list-inline interests">
-                  	<li><a href=""><i class="icon ion-android-bicycle"></i> Bycicle</a></li>
-                  	<li><a href=""><i class="icon ion-ios-camera"></i> Photgraphy</a></li>
-                  	<li><a href=""><i class="icon ion-android-cart"></i> Shopping</a></li>
-                  	<li><a href=""><i class="icon ion-android-plane"></i> Traveling</a></li>
-                  	<li><a href=""><i class="icon ion-android-restaurant"></i> Eating</a></li>
+                  	<li value="1"><a href=""><i  class="icon ion-android-bicycle"></i> Bycicle</a></li>
+                  	<li value="2"><a href=""><i class="icon ion-ios-camera"></i> Photgraphy</a></li>
+                  	<li value="3" ><a href=""><i class="icon ion-android-cart"></i> Shopping</a></li>
+                  	<li value="4"><a href=""><i class="icon ion-android-plane"></i> Traveling</a></li>
+                  	<li value="5"><a href=""><i class="icon ion-android-restaurant"></i> Eating</a></li>
                   </ul>
                   <div class="line"></div>
                   <div class="row">

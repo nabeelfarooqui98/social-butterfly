@@ -25,8 +25,15 @@ include 'header.php';
           $ex_sel = $con->query($sel);
           $data = mysqli_fetch_array($ex_sel);
           $name = $data['fname'] . " " . $data['lname'];
+          $id = $data['id'];
           $image= $data['image'];
           $info = $data['info'];
+          $dob = $data['dob'];
+          $que = "SELECT * FROM education WHERE UserId='$id'";
+          $edu = mysqli_fetch_array($con->query($que));
+          $que1 = "SELECT * FROM work WHERE UId='$id'";
+          $work = mysqli_fetch_array($con->query($que1));
+
           ?>
 
 
@@ -41,6 +48,10 @@ include 'header.php';
               <div class="about-profile">
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-information-outline icon-in-title"></i>Personal Information</h4>
+                  <h5 class="ion-ios-calendar">  Date of Birth:</h5>
+                  <h6 class="grey" > <?php echo $dob?> </h6>
+                  <h5 class="ion-ios-calendar"> Gender:</h5>
+                  <h6 class="grey" > <?php echo $data['gender']?> </h6>
                   <p><?php echo $info ?></p>
                 </div>
                 <div class="about-content-block">
@@ -48,8 +59,18 @@ include 'header.php';
                   <div class="organization">
                     <img src="images/envato.png" alt="" class="pull-left img-org" />
                     <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
+                      <h5><?php echo $work['company'];?></h5>
+                      <p><?php echo $work['pos'];?>: <span class="text-grey"><?php echo $work['city'];?></span></p>
+                    </div>
+                  </div>
+                  </div>
+                <div class="about-content-block">
+                  <h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Education</h4>
+                  <div class="organization">
+                    <img src="images/envato.png" alt="" class="pull-left img-org" />
+                    <div class="work-info">
+                      <h5><?php echo $education['school'];?></h5>
+                      <p><?php echo $work['company'];?> - <span class="text-grey">1 February 2013 to present</span></p>
                     </div>
                   </div>
                   <div class="organization">

@@ -25,7 +25,7 @@ if(isset($_POST['savebtn']))
 
     if($con->query($query1))
     {
-        echo 'success';
+
         header("Location: ../edit-profile-basic.php?id=".$id);
     }
     else

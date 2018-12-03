@@ -2,10 +2,6 @@
 session_start();
 include 'header.php';
 include 'scripts/DbConnect.php';
-//include './scripts/login.php';
-
-//print_r($_GET);
-
 
 ?>
 
@@ -28,7 +24,7 @@ include 'scripts/DbConnect.php';
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.php">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.php">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.php">Videos</a></div></li>
-              <li><i class="icon ion-ios-videocam"></i><div><a href="../social-butterfly/scripts/logout.php">Log Out</a></div></li>
+              <li><i class="icon ion-ios-close"></i><div><a href="../social-butterfly/scripts/logout.php">Log Out</a></div></li>
             </ul><!--news-feed links ends-->
           </div>
           
