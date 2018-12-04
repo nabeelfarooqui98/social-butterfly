@@ -23,6 +23,10 @@ else{
             $execute=$con->query($query1);
             $query2="DELETE FROM friendrequest WHERE sender_id='$UserId'  OR receiver_id='$Userid'";
             $execute2=$con->query($query2);
+            $query3="DELETE FROM work WHERE UId='$Userid'";
+            $execute3=$con->query($query3);
+            $query4="DELETE FROM eductaion WHERE UserId='$Userid'";
+            $execute4=$con->query($query4);
 
         }
         else{
