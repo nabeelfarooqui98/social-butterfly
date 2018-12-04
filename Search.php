@@ -52,7 +52,6 @@ $receiverId = $row['id'];
 
     }
     }
-
 ?>
 </div>
 <?php
