@@ -15,19 +15,17 @@ include 'header.php';
 					<div class="line-divider"></div>
 					<div class="form-wrapper">
 						<p class="signup-text">Signup now and meet awesome people around the world</p>
-						<form action="#">
+						<form name="Login_form" action="scripts/login.php" id='Login_form' method="POST" class="form-inline">
 							<fieldset class="form-group">
-								<input type="text" class="form-control" id="example-name" placeholder="Enter name">
+								<input id="my-email" class="form-control input-group-lg" type="text" name="email" title="Enter Email" placeholder="Your Email">
 							</fieldset>
 							<fieldset class="form-group">
-								<input type="email" class="form-control" id="example-email" placeholder="Enter email">
+								<input input id="my-password" class="form-control input-group-lg" type="password" name="pass" title="Enter password" placeholder="Password">
 							</fieldset>
-							<fieldset class="form-group">
-								<input type="password" class="form-control" id="example-password" placeholder="Enter a password">
-							</fieldset>
+							<button type="submit" name="loginbtn" class="btn btn-secondary" value="login">Login Now</button>
 						</form>
-						<p>By signning up you agree to the terms</p>
-						<button class="btn-secondary">Signup</button>
+						
+	<!-- 					<button class="btn-secondary">Signup</button> -->
 					</div>
 					<a href="#">Already have an account?</a>
 					<img class="form-shadow" src="images/bottom-shadow.png" alt="" />
