@@ -49,18 +49,18 @@
                     <li class="dropdown"><a href="Search.php" class="button">Browse Users</a></li>
                     <li class="dropdown"><a href="newsfeed.php" class="button">Newsfeed</a></li>
                     <li class="dropdown"><a href="timeline.php" class="button">My Timeline</a></li>
-                    <li class="dropdown"><a href=".php" class="button">Edit Profile</a></li>
                     <li class="dropdown"><a href="contact.php">Contact</a></li>
+
+                    
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span><img src="images/down-arrow.png" alt="" /></span></a>
                         <ul class="dropdown-menu page-list">
-
-                            <li><a href="edit-profile-basic.php">Edit Profile</a></li>
+                            <li><a href="./edit-profile-basic.php">Edit Profile</a></li>
                             <li><a href="./scripts/logout.php">Logout</a></li>
                         </ul>
                     </li>
-
+                    
                 </ul>
 
 <!--                <form class="navbar-form navbar-right hidden-sm">-->

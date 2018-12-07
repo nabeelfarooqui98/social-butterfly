@@ -162,6 +162,7 @@ if(isset($_SESSION['kuchBhi']))
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+            <!--
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right main-menu">
                     <li class="dropdown">
@@ -217,12 +218,16 @@ if(isset($_SESSION['kuchBhi']))
                     </li>
                     <li class="dropdown"><a href="contact.php">Contact</a></li>
                 </ul>
+                
+
                 <form class="navbar-form navbar-right hidden-sm">
                     <div class="form-group">
                         <i class="icon ion-android-search"></i>
                         <input type="text" class="form-control" placeholder="Search friends, photos, videos">
                     </div>
                 </form>
+                -->
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
@@ -590,8 +595,7 @@ if(isset($_SESSION['kuchBhi']))
                                     <button type="submit" name="loginbtn" class="btn btn-primary" value="login">Login Now</button>
                                 </div>
                             </form><!--Login Form Ends-->
-                            <p><a href="#">Forgot Password?</a></p>
-                            <button type="submit" name="loginbtn" class="btn btn-primary" value="login">old login button ( ._.)</button> <!--ye button ghalat jgha hai kia??? original ye tha, uper dalne se sai hogaya >
+
             </div>
           </div>
         </div>
