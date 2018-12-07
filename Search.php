@@ -32,17 +32,19 @@ $receiverId = $row['id'];
     <div class="timeline">
         <div id="page-contents">
             <div class="row">
-                <div class="col-md-3">
+<!--                 <div class="col-md-3">
                     <div class="col-md-7">
-
+ -->
                         <div class="follow-user">
                             <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
                             <div>
-                                <h3><a href="FriendTL.php?uid=<?php echo $receiverId ; ?>"><?php echo "$Recname"; ?></a>
+                                <h3>
+                                    <a href="FriendTL.php?uid=<?php echo $receiverId; ?>"><?php echo "$Recname"; ?>
+                                </a>
                                 </h3>
-                            </div>
+<!--                             </div>
                         </div>
-                    </div>
+ -->                    </div>
                 </div>
             </div>
         </div>
