@@ -69,28 +69,28 @@ include 'header.php';
                   <div class="organization">
                     <img src="images/envato.png" alt="" class="pull-left img-org" />
                     <div class="work-info">
-                      <h5><?php echo $education['school'];?></h5>
-                      <p><?php echo $work['company'];?> - <span class="text-grey">1 February 2013 to present</span></p>
+                      <h5><?php echo $edu['school'];?></h5>
+                      <p> Completed School in year - <span class="text-grey"><?php echo $edu['syear'];?> </span></p>
                     </div>
                   </div>
                   <div class="organization">
                     <img src="images/envato.png" alt="" class="pull-left img-org" />
                     <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
+                      <h5><?php echo $edu['college'];?></h5>
+                      <p> Completed College in year - <span class="text-grey"><?php echo $edu['cyear'];?> </span></p>
                     </div>
                   </div>
                   <div class="organization">
                     <img src="images/envato.png" alt="" class="pull-left img-org" />
                     <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
+                      <h5><?php echo $edu['university'];?></h5>
+                      <p> Status in education - <span class="text-grey"><?php echo $edu['uyear'];?> </span></p>
                     </div>
                   </div>
                 </div>
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-location-outline icon-in-title"></i>Location</h4>
-                  <p>228 Park Eve, New York</p>
+                  <p><?php echo $work['city'];?></p>
                   <div class="google-maps">
                     <div id="map" class="map"></div>
                   </div>
