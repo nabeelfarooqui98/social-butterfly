@@ -46,60 +46,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right main-menu">
-                    <li class="dropdown"><a href="Search.php" class="button">Search User</a></li>
+                    <li class="dropdown"><a href="Search.php" class="button">Browse Users</a></li>
+                    <li class="dropdown"><a href="newsfeed.php" class="button">Newsfeed</a></li>
+                    <li class="dropdown"><a href="timeline.php" class="button">My Timeline</a></li>
+                    <li class="dropdown"><a href=".php" class="button">Edit Profile</a></li>
+                    <li class="dropdown"><a href="contact.php">Contact</a></li>
+
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-                        <ul class="dropdown-menu newsfeed-home">
-                            <li><a href="index.php">Landing Page 1</a></li>
-                            <li><a href="index-register.php">Landing Page 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
-                        <ul class="dropdown-menu newsfeed-home">
-                            <li><a href="newsfeed.php">Newsfeed</a></li>
-                            <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
-                            <li><a href="newsfeed-friends.php">My friends</a></li>
-                            <li><a href="newsfeed-messages.php">Chatroom</a></li>
-                            <li><a href="newsfeed-images.php">Images</a></li>
-                            <li><a href="newsfeed-videos.php">Videos</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
-                        <ul class="dropdown-menu login">
-                            <li><a href="timeline.php">Timeline</a></li>
-                            <li><a href="timeline-about.php">Timeline About</a></li>
-                            <li><a href="timeline-album.php">Timeline Album</a></li>
-                            <li><a href="timeline-friends.php">Timeline Friends</a></li>
-                            <li><a href="edit-profile-basic.php">Edit: Basic Info</a></li>
-                            <li><a href="edit-profile-work-edu.php">Edit: Work</a></li>
-                            <li><a href="edit-profile-interests.php">Edit: Interests</a></li>
-                            <li><a href="edit-profile-settings.php">Account Settings</a></li>
-                            <li><a href="edit-profile-password.php">Change Password</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
+                        <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span><img src="images/down-arrow.png" alt="" /></span></a>
                         <ul class="dropdown-menu page-list">
 
-                            <li><a href="index.php">Landing Page 1</a></li>
-                            <li><a href="index-register.php">Landing Page 2</a></li>
-                            <li><a href="newsfeed.php">Newsfeed</a></li>
-                            <li><a href="newsfeed-people-nearby.php">Poeple Nearly</a></li>
-                            <li><a href="newsfeed-friends.php">My friends</a></li>
-                            <li><a href="newsfeed-messages.php">Chatroom</a></li>
-                            <li><a href="newsfeed-images.php">Images</a></li>
-                            <li><a href="newsfeed-videos.php">Videos</a></li>
-                            <li><a href="timeline.php">Timeline</a></li>
-                            <li><a href="timeline-about.php">Timeline About</a></li>
-                            <li><a href="timeline-album.php">Timeline Album</a></li>
-                            <li><a href="timeline-friends.php">Timeline Friends</a></li>
                             <li><a href="edit-profile-basic.php">Edit Profile</a></li>
-                            <li><a href="contact.php">Contact Us</a></li>
+                            <li><a href="./scripts/logout.php">Logout</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="contact.php">Contact</a></li>
 
                 </ul>
 
