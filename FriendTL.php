@@ -2,6 +2,8 @@
 session_start();
 include 'header.php';
 include 'scripts/DbConnect.php';
+
+
 ?>
 
 <div class="container">
@@ -27,6 +29,18 @@ include 'scripts/DbConnect.php';
             $name = $data['fname'] . " " . $data['lname'];
             //echo "name::::::" . $name;
             $recid=$data['id'];
+
+            //redirect to timeline.php if this page is viewers own timeline (in other words, if /?uid=viewers_id)
+            $sql = "SELECT * FROM users WHERE email = '" . $email . "'";
+            $ex_sql = $con->query($sql);
+            $res = mysqli_fetch_array($ex_sql);
+            $viewer_id = $res['id'];
+            if($viewer_id == $_GET['uid'])
+            {
+                // header('Location: ./timeline.php');
+                echo "<script>alert('it is your profile !');location.href = 'timeline.php'</script>";
+            }
+
             ?>
 
 
