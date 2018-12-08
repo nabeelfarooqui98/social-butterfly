@@ -3,7 +3,7 @@
     			<div class="col-md-3 static">
             <div class="profile-card">
             	<img src="images/prof/<?php echo $userse['image'];?>" alt="user" class="profile-photo" />
-            	<h5><a href="timeline.php" class="text-white"></a> <?php echo $name;?></h5>
+            	<h5><a href="timeline.php" class="text-white"><?php echo $name;?></a> </h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
