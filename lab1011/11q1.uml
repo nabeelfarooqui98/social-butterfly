@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_2rawoPrEEeiPA-B5lAe0KA" name="model">
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_2sQeIPrEEeiPA-B5lAe0KA" name="StateMachine1">
+    <region xmi:type="uml:Region" xmi:id="_2tDIUPrEEeiPA-B5lAe0KA" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_WJ24APrGEeiPA-B5lAe0KA" source="_46fQQPrEEeiPA-B5lAe0KA" target="_UFArYPrGEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_WfcGcPrGEeiPA-B5lAe0KA" name="enter card" source="_UFArYPrGEeiPA-B5lAe0KA" target="_4N7sQPrEEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_W0qIgPrGEeiPA-B5lAe0KA" source="_4N7sQPrEEeiPA-B5lAe0KA" target="_FVZcUPrGEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_iScacPrGEeiPA-B5lAe0KA" name="[invalid] / eject card" source="_FVZcUPrGEeiPA-B5lAe0KA" target="_hIcFcPrGEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_oKMQ8PrGEeiPA-B5lAe0KA" name="[valid] / read pin" source="_FVZcUPrGEeiPA-B5lAe0KA" target="_4rDGEPrEEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_DfN2cPrJEeiPA-B5lAe0KA" source="__6a6APrIEeiPA-B5lAe0KA" target="_hIcFcPrGEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_CYISkPrJEeiPA-B5lAe0KA" source="__6a6APrIEeiPA-B5lAe0KA" target="_4rDGEPrEEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_5R1ccPrIEeiPA-B5lAe0KA" name="select transaction" source="_4rDGEPrEEeiPA-B5lAe0KA" target="_3Ywa8PrIEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_B94mkPrJEeiPA-B5lAe0KA" source="_3Ywa8PrIEeiPA-B5lAe0KA" target="__6a6APrIEeiPA-B5lAe0KA"/>
+      <subvertex xmi:type="uml:State" xmi:id="_4N7sQPrEEeiPA-B5lAe0KA" name="reading card"/>
+      <subvertex xmi:type="uml:State" xmi:id="_4rDGEPrEEeiPA-B5lAe0KA" name="displaying options"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_46fQQPrEEeiPA-B5lAe0KA" name="Initial1"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_FVZcUPrGEeiPA-B5lAe0KA" name="card validity" kind="choice"/>
+      <subvertex xmi:type="uml:State" xmi:id="_UFArYPrGEeiPA-B5lAe0KA" name="initialization"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_hIcFcPrGEeiPA-B5lAe0KA" name="FinalState2"/>
+      <subvertex xmi:type="uml:State" xmi:id="_3Ywa8PrIEeiPA-B5lAe0KA" name="performing transaction"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="__6a6APrIEeiPA-B5lAe0KA" name="finished?" kind="choice"/>
+    </region>
+  </packagedElement>
+</uml:Model>

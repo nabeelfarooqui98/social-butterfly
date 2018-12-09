@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3gnrkPrKEeiPA-B5lAe0KA" name="model">
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_3goSoPrKEeiPA-B5lAe0KA" name="StateMachine1">
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_4rUkIPrKEeiPA-B5lAe0KA" name="StateMachine1">
+      <region xmi:type="uml:Region" xmi:id="_4rUkIfrKEeiPA-B5lAe0KA" name="Region1"/>
+    </ownedBehavior>
+    <region xmi:type="uml:Region" xmi:id="_3go5sPrKEeiPA-B5lAe0KA" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_wjhb8PrdEeiPA-B5lAe0KA" source="_tNFw0PrLEeiPA-B5lAe0KA" target="_vTQt8PrdEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_xaYygPrdEeiPA-B5lAe0KA" name="[cancel] or [poicy violated]" source="_hEnd8PrdEeiPA-B5lAe0KA" target="_tNFw0PrLEeiPA-B5lAe0KA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_AGZT8PreEeiPA-B5lAe0KA" source="_upOScPrdEeiPA-B5lAe0KA" target="_ruj9UPrLEeiPA-B5lAe0KA"/>
+      <subvertex xmi:type="uml:State" xmi:id="_tNFw0PrLEeiPA-B5lAe0KA" name="cancelled"/>
+      <subvertex xmi:type="uml:State" xmi:id="_hEnd8PrdEeiPA-B5lAe0KA" name="State1">
+        <region xmi:type="uml:Region" xmi:id="_qjAD8vrdEeiPA-B5lAe0KA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_2g1u8PrdEeiPA-B5lAe0KA" name="remove suspension or unlocked" source="_sgiM0PrLEeiPA-B5lAe0KA" target="_nfkNUPrLEeiPA-B5lAe0KA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_3gFlcPrdEeiPA-B5lAe0KA" name="unsuccessful login or request for suspend" source="_nfkNUPrLEeiPA-B5lAe0KA" target="_sgiM0PrLEeiPA-B5lAe0KA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_CJnv8PreEeiPA-B5lAe0KA" name="not verified" source="_ruj9UPrLEeiPA-B5lAe0KA" target="_nfkNUPrLEeiPA-B5lAe0KA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Cn-f4PreEeiPA-B5lAe0KA" name="verified" source="_ruj9UPrLEeiPA-B5lAe0KA" target="_sgiM0PrLEeiPA-B5lAe0KA"/>
+          <subvertex xmi:type="uml:State" xmi:id="_ruj9UPrLEeiPA-B5lAe0KA" name="new"/>
+          <subvertex xmi:type="uml:State" xmi:id="_sgiM0PrLEeiPA-B5lAe0KA" name="active"/>
+          <subvertex xmi:type="uml:State" xmi:id="_nfkNUPrLEeiPA-B5lAe0KA" name="suspended"/>
+        </region>
+      </subvertex>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_upOScPrdEeiPA-B5lAe0KA" name="Initial1"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_vTQt8PrdEeiPA-B5lAe0KA" name="FinalState1"/>
+    </region>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_tcgb8PrCEeiPA-B5lAe0KA" name="model">
+  <packagedElement xmi:type="uml:Device" xmi:id="_vE-OkPrCEeiPA-B5lAe0KA" name="pda"/>
+  <packagedElement xmi:type="uml:Device" xmi:id="_xlUrcPrCEeiPA-B5lAe0KA" name="web server">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="__o1pgPrCEeiPA-B5lAe0KA" name="website" fileName="website"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_ynjkgPrCEeiPA-B5lAe0KA" name="application server">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_GKxsgPrDEeiPA-B5lAe0KA" name="IMS.jar" fileName="Artifact1.file"/>
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_G7_HAPrDEeiPA-B5lAe0KA" name="OMS.jar" fileName="Artifact1.file"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_zfAw8PrCEeiPA-B5lAe0KA" name="database server">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_fBg8kPrDEeiPA-B5lAe0KA" name="mySQL" fileName="Artifact1.file"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_0Q_ngPrCEeiPA-B5lAe0KA" name="terminal">
+    <nestedClassifier xmi:type="uml:Artifact" xmi:id="_YO29APrDEeiPA-B5lAe0KA" name="IMSClient.jar" fileName="Artifact1.file"/>
+  </packagedElement>
+</uml:Model>

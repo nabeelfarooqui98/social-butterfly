@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="__SUZMPq9EeiPA-B5lAe0KA" name="model">
+  <packagedElement xmi:type="uml:Component" xmi:id="__3s-MPq9EeiPA-B5lAe0KA" name="ticketseller"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_JZzmkPq-EeiPA-B5lAe0KA" name="managerinterface"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_PKE8EPq-EeiPA-B5lAe0KA" name="ticketdatabase"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_SE2EEPq-EeiPA-B5lAe0KA" name="kioskinterface"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_ZUKKcPq-EeiPA-B5lAe0KA" name="clerkinterface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_UMB9kPq_EeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_wXJvgPq_EeiPA-B5lAe0KA" name="Usage0" client="__3s-MPq9EeiPA-B5lAe0KA" supplier="_UMB9kPq_EeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_x6ubEPq_EeiPA-B5lAe0KA" name="purchase"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_0-0eMPq_EeiPA-B5lAe0KA" name="Realization0" client="_PKE8EPq-EeiPA-B5lAe0KA" supplier="_x6ubEPq_EeiPA-B5lAe0KA" contract="_x6ubEPq_EeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_MR4VAPrAEeiPA-B5lAe0KA">
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_OMiq4PrAEeiPA-B5lAe0KA" name="Interface3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_SAs5APrAEeiPA-B5lAe0KA" name="Realization1" client="__3s-MPq9EeiPA-B5lAe0KA" supplier="_MR4VAPrAEeiPA-B5lAe0KA" contract="_MR4VAPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_VcMvgPrAEeiPA-B5lAe0KA" name="sales"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_WADDcPrAEeiPA-B5lAe0KA" name="status"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_WcNbAPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_XAS_gPrAEeiPA-B5lAe0KA" name="clerksales"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_YKYNAPrAEeiPA-B5lAe0KA" name="Usage1" client="_SE2EEPq-EeiPA-B5lAe0KA" supplier="_VcMvgPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_dQTlAPrAEeiPA-B5lAe0KA" name="Realization2" client="__3s-MPq9EeiPA-B5lAe0KA" supplier="_WcNbAPrAEeiPA-B5lAe0KA" contract="_WcNbAPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dwlAgPrAEeiPA-B5lAe0KA" name="Usage2" client="_ZUKKcPq-EeiPA-B5lAe0KA" supplier="_XAS_gPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_118eAPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_7EfmgPrAEeiPA-B5lAe0KA" name="Realization3" client="_PKE8EPq-EeiPA-B5lAe0KA" supplier="_WADDcPrAEeiPA-B5lAe0KA" contract="_WADDcPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_7knRAPrAEeiPA-B5lAe0KA" name="Usage3" client="_JZzmkPq-EeiPA-B5lAe0KA" supplier="_118eAPrAEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_HxoAcPrBEeiPA-B5lAe0KA" name="creditcard"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_KLR_cPrBEeiPA-B5lAe0KA" name="charge"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_KwqkcPrBEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_O5ez8PrBEeiPA-B5lAe0KA" name="Realization4" client="_HxoAcPrBEeiPA-B5lAe0KA" supplier="_KwqkcPrBEeiPA-B5lAe0KA" contract="_KwqkcPrBEeiPA-B5lAe0KA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_PV8tgPrBEeiPA-B5lAe0KA" name="Usage4" client="__3s-MPq9EeiPA-B5lAe0KA" supplier="_KLR_cPrBEeiPA-B5lAe0KA"/>
+</uml:Model>
