@@ -1,5 +1,5 @@
 <?php
-sesson_start();
+session_start();
 include 'header.php';
 include 'scripts/DbConnect.php';
 

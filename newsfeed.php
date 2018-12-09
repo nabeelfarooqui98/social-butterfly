@@ -57,6 +57,7 @@ $name = $userse['fname'] . " " . $userse['lname'];
               $query=mysqli_query($con,$gett) or die('error');
               while($row=mysqli_fetch_array($query,MYSQLI_ASSOC)){
                 $userid=$row['user_id'];
+
                 $que = "SELECT * FROM users WHERE id='$userid'";
                 $ex_que = $con->query($que);
                 $use = mysqli_fetch_array($ex_que);

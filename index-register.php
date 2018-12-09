@@ -18,7 +18,7 @@ if(isset($_SESSION['kuchBhi']))
     <meta name="description" content="This is social network html5 template available in themeforest......" />
     <meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
     <meta name="robots" content="index, follow" />
-    <title>Friend Finder | A Complete Social Network Template</title>
+    <title>Social Butterfly | A Social Network</title>
 
     <!-- Stylesheets
     ================================================= -->
